@@ -1,0 +1,1 @@
+import { NextResponse } from 'next/server'; import { Store } from '../../../../shared/store'; export async function POST(req:Request){ const b=await req.json(); const id=Store.addJob({ id:'', company:b.company, title:b.title, location:b.location, compensation:b.compensation, logoUrl:b.logoUrl, active:b.active!==false }); return NextResponse.json({ok:true,id}); }

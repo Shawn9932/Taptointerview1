@@ -1,0 +1,1 @@
+import { NextResponse } from 'next/server'; import { Store } from '../../../../shared/store'; export async function POST(req:Request){ const {id}=await req.json(); Store.toggleJob(id); return NextResponse.json({ok:true}); }
